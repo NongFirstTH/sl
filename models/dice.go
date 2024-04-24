@@ -6,17 +6,17 @@ type Dice interface {
 	Roll() int
 }
 
-// TODO: change max to faces
+// FINISH: change max to faces
 type diceImpl struct {
-	max int
+	faces int
 }
 
-func NewDice(max int) Dice {
+func NewDice(faces int) Dice {
 	return &diceImpl{
-		max: max,
+		faces: faces,
 	}
 }
 
 func (d *diceImpl) Roll() int {
-	return rand.Intn(d.max) + 1
+	return rand.Intn(d.faces) + 1
 }
